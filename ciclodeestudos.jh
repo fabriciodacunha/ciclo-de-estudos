@@ -1,0 +1,71 @@
+
+entity Banca {
+    id Long,
+    nome String required
+}
+
+entity Concurso {
+    id Long,
+    nomeOrgao String,
+    cargo String,
+    remuneracao Double,
+    dataInscricao LocalDate,
+    dataProva1 LocalDate,
+    dataProva2 LocalDate
+}
+
+entity Agrupamento {
+    id Long,
+    nome String,
+    tipoConhecimento String,
+    pesoProva Double
+}
+
+entity Disciplina {
+    id Long,
+    nome String
+}
+
+entity Topico {
+    id Long,
+    nome String,
+    txRecorrencia Double
+}
+
+entity Estudo {
+    id Long,
+    dataHoraInicio Instant,
+    dataHoraFim Instant,
+    qtQuestoesResolvidas Integer,
+    qtQuestoesCertas Integer,
+    finalizado Boolean,
+    arquivoResumoEstudo String,
+    revisao1d Boolean,
+    revisao7d Boolean,
+    revisao30d Boolean
+}
+
+relationship OneToOne {
+    Concurso{banca(id)} to Banca
+}
+
+relationship OneToMany {
+    Agrupamento{concurso(id)} to Concurso,
+    Disciplina{agrupamento(id)} to Agrupamento,
+    Topico{disciplina(id)} to Disciplina,
+    Estudo{topico(id)} to Topico
+}
+
+
+// Set pagination options
+paginate Topico, Estudo with infinite-scroll
+paginate Disciplina with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl // except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
