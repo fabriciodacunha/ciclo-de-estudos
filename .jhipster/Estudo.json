@@ -1,0 +1,58 @@
+{
+  "applications": "*",
+  "entityTableName": "estudo",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dataHoraInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dataHoraFim",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "qtQuestoesResolvidas",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "qtQuestoesCertas",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "finalizado",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "arquivoResumoEstudo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "revisao1d",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "revisao7d",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "revisao30d",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Estudo",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "topico",
+      "relationshipName": "topico",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
