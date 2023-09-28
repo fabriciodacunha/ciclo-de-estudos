@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "entityTableName": "concurso",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nomeOrgao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cargo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "remuneracao",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dataInscricao",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dataProva1",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dataProva2",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Concurso",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "banca",
+      "relationshipName": "banca",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

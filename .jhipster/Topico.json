@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "entityTableName": "topico",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "txRecorrencia",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "Topico",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "disciplina",
+      "relationshipName": "disciplina",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

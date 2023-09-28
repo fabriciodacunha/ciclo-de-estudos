@@ -1,0 +1,18 @@
+{
+  "applications": "*",
+  "entityTableName": "banca",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Banca",
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "entityTableName": "agrupamento",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipoConhecimento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pesoProva",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "Agrupamento",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "concurso",
+      "relationshipName": "concurso",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
